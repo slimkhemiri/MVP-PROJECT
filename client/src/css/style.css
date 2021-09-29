@@ -1,0 +1,64 @@
+body {
+   background-image: url("https://tbcdn.talentbrew.com/company/185/v2_0/img/bg-career-areas3.jpg");
+   background-size: cover;
+}
+
+input {
+   border: 3px solid rgb(18, 4, 29);
+   border-radius: 10px;
+   width:200px;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-left: 25px;
+   background-color: transparent;
+   font-size: medium;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-top: 5px; 
+}
+
+button {
+   font-size: larger;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   border: 3px solid rgb(18, 4, 29);
+   border-radius: 10px;
+   width:150px;
+   height: 50px;
+   background-color: transparent;
+   margin-left: 55px;
+   margin-top: 5px;
+}
+label {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size:larger;
+   margin-top:35px;
+}
+.bar{
+   
+      position: relative;
+      list-style-type: none;
+      margin: 25px;
+      padding: 14px 16px;
+      overflow: hidden;
+      background-color: rgb(23, 2, 49);
+      font-size: 37px;
+       height: 42px;
+      opacity:0.5;
+      color: aqua;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.clickin1 {
+   font-size: 37px;
+   width:250px;
+   height: 100px;
+   margin-top: 20%;
+}
+.clickin2 {
+   font-size: 37px;
+   width:250px;
+   height: 100px;
+   margin-top: 20%;
+}
