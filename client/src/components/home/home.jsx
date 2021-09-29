@@ -8,14 +8,30 @@ function Home(props) {
       <input type="text" placeholder="search here..." />
       <button>Search</button>
       <br />
-      <button className="home">Architecture</button>
-      <button className="home">Arts</button>
-      <button className="home">administration</button>
-      <button className="home">Communications</button>
-      <button className="home">Education</button>
-      <button className="home">technology</button>
-      <button className="home">Maintenance</button>
-      <button className="home">Sales</button>
+      <button className="home" onClick={props.handleClickField}>
+        Architecture
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        Arts
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        administration
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        Communications
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        Education
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        technology
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        Maintenance
+      </button>
+      <button className="home" onClick={props.handleClickField}>
+        Sales
+      </button>
     </div>
   );
 }

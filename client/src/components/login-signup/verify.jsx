@@ -5,10 +5,10 @@ function Verify(props) {
   return (
     <div>
       <button className="clickin1" onClick={props.handleClickVerify}>
-        For Client
+        Client
       </button>
       <button className="clickin2" onClick={props.handleClickVerify}>
-        For Professional
+        Professional
       </button>
     </div>
   );

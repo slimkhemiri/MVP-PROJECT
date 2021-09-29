@@ -1,6 +1,7 @@
 body {
    background-image: url("https://tbcdn.talentbrew.com/company/185/v2_0/img/bg-career-areas3.jpg");
    background-size: cover;
+   color: #fff;
 }
 
 input {
@@ -20,6 +21,7 @@ input {
 }
 
 button {
+   opacity: 0.8;
    font-size: larger;
    font-family: Georgia, 'Times New Roman', Times, serif;
    border: 3px solid rgb(18, 4, 29);
@@ -29,11 +31,13 @@ button {
    background-color: transparent;
    margin-left: 55px;
    margin-top: 5px;
+   color : #fff;
 }
 label {
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size:larger;
    margin-top:35px;
+   opacity: 0.8;
 }
 .bar{
    
@@ -45,20 +49,24 @@ label {
       background-color: rgb(23, 2, 49);
       font-size: 37px;
        height: 42px;
-      opacity:0.5;
+      opacity:0.6;
       color: aqua;
       text-align: center;
       font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .clickin1 {
+   opacity: 0.8;
    font-size: 37px;
    width:250px;
    height: 100px;
    margin-top: 20%;
+   color : #fff;
 }
 .clickin2 {
+   opacity: 0.8;
    font-size: 37px;
    width:250px;
    height: 100px;
    margin-top: 20%;
+   color : #fff;
 }

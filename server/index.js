@@ -19,6 +19,7 @@ mongoose
   .catch((err) => {
     console.log("Cannot connect to DB");
   });
+
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -32,7 +33,7 @@ app.post("/signup", (req, res) => {
     password: req.body.password,
   });
   user.save().then((user) => {
-    console.log(user);
+    console.log("user :", user);
   });
 
   res.send("user added");
@@ -58,41 +59,26 @@ app.post("/login", (req, res) => {
 });
 
 //////////////////////////////////     Pro Side      ///////////////////////////////
-app.post('/insert',(req,res) => {
+app.post("/insert", (req, res) => {
   const pro = new db.Pro({
     company_name: req.body.company_name,
     phone_number: req.body.phone_number,
     job_name: req.body.job_name,
-    description:req.body.description,
-  })
+    description: req.body.description,
+  });
   pro.save().then((pro) => {
-    console.log(pro);
+    console.log("pro :", pro);
   });
 
   res.send("job added");
+});
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get("/insert", (req, res) => {
+  res.send(pro);
+});
 
 ////////////////////////////////////////////////////////////////////////////////////
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
