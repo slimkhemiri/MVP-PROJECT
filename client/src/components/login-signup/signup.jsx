@@ -1,7 +1,7 @@
 import React from "react";
 
 function Signup(props) {
-  console.log(props);
+
   return (
     <div>
       <label>Your Name here :</label>

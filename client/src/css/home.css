@@ -6,3 +6,8 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 37px;
  }
+ .date{
+    float: right;
+     width: 200px;
+     height:40px
+ }

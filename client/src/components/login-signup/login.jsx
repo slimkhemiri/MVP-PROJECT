@@ -1,7 +1,7 @@
 import React from "react";
 
 function Login(props) {
-  console.log(props);
+  
   return (
     <div>
       <label>Your Name :</label>

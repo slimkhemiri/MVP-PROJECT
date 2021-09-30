@@ -1,31 +1,38 @@
-
 # MVP (Solo) Project
 
+## Heading
 
-## Heading ##
- Burkina-Career
+Burkina-Career
 
+## Sub-Heading
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+> This product is for unemployees people and for companies who want to recrut employees
 
-## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+## Summary
 
-## Problem ##
-  > Describe the problem your product solves.
+> The Client have to make an account first then he will find all the fields he need,so depending on his field he will find the right job.
+> For the Professional have to make an account too then he will add job position in the exact field and he can delete or update his post.
 
-## Solution ##
-  > Describe how your product elegantly solves the problem.
+## Problem
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+> The product made to reduce unemployment
 
-## How to Get Started ##
-  > Describe how easy it is to get started.
+## Solution
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+> By offering jobs for the unemployees and to help companies who search for workers
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## Quote from You
+
+> This product decrease the amount of unemployees and help them to find a job depending on his field
+
+## How to Get Started
+
+> the steps are easy you just have to make a new account first then you will find every thing you want in the home page
+
+## Customer Quote
+
+> A Customer tried my Product and he found his dream job so he started his career and he gain alot of money
+
+## Closing and Call to Action
+
+> After signing up start searching for the job,once you find call company and make an interview and then start your career.

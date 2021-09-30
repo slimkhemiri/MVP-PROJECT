@@ -1,7 +1,7 @@
 import React from "react";
 
 function Verify(props) {
-  console.log(props);
+ 
   return (
     <div>
       <button className="clickin1" onClick={props.handleClickVerify}>

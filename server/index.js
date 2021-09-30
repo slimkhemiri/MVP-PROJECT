@@ -68,17 +68,33 @@ app.post("/insert", (req, res) => {
   });
   pro.save().then((pro) => {
     console.log("pro :", pro);
+    res.send(pro);
   });
 
-  res.send("job added");
+  
 });
 
-app.get("/insert", (req, res) => {
-  res.send(pro);
+app.get("/read", (req, res) => {
+  db.Pro.find({}, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    res.send(result);
+  });
+});
+
+app.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  db.Pro.findByIdAndRemove(id).exec()
+  db.Pro.find({}, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    res.send(result);
+  });
 });
 
 ////////////////////////////////////////////////////////////////////////////////////
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-

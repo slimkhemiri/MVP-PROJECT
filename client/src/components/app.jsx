@@ -20,13 +20,14 @@ class App extends Component {
       phone_number: "",
       job_name: "",
       description: "",
+      newNumber: "",
+      jobData: [],
       clickin: false,
       login: false,
       signup: false,
       home: false,
       putjob: false,
       verify: true,
-      jobData: [],
     };
 
     ///////////////////////bind the functions///////////////////////
@@ -42,22 +43,48 @@ class App extends Component {
     this.sendData = this.sendData.bind(this);
     this.checkData = this.checkData.bind(this);
     this.postData = this.postData.bind(this);
+    // this.updateData = this.updateData.bind(this);
     this.handleSaveCompName = this.handleSaveCompName.bind(this);
     this.handleSavePhoneNum = this.handleSavePhoneNum.bind(this);
     this.handleSaveJobName = this.handleSaveJobName.bind(this);
     this.handleSaveDescription = this.handleSaveDescription.bind(this);
+    this.handleSaveNum = this.handleSaveNum.bind(this);
+    this.deleteData = this.deleteData.bind(this);
+    this.alertLogin = this.alertLogin.bind(this);
   }
 
-  //////////////////////////////////////////////////////////////
+  //////////////////////Get the Data from Database///////////////////////
 
   componentDidMount() {
-    axios.get("/insert").then((response) => {
-      console.log(response);
-    });
-    this.setState({
-      jobData: [],
+    this.getData();
+  }
+  getData() {
+    axios.get("http://localhost:1337/read").then((response) => {
+      this.setState({
+        jobData: response.data,
+      });
     });
   }
+
+  /////////////////////////Update and delete the data///////////////////
+  // updateData(id) {
+  //   axios.put("http://localhost:1337/update", {
+  //     id: id,
+  //     newNumber: this.state.newNumber,
+  //   });
+
+  // }
+
+  deleteData(id) {
+    axios.delete(`http://localhost:1337/delete/${id}`)
+    //   .then((data) => console.log(data));
+    // this.alertLogin();
+    .then((res)=>{   
+      
+this.setState({jobData:res.data})
+    })
+  }
+
   /////////////////////save changes in the inputs///////////////////
   handleSaveName(e) {
     this.setState({
@@ -96,6 +123,11 @@ class App extends Component {
       description: e.target.value,
     });
   }
+  handleSaveNum(e) {
+    this.setState({
+      newNumber: e.target.value,
+    });
+  }
 
   ////////////////check user and password when login////////////////
 
@@ -107,6 +139,7 @@ class App extends Component {
       })
       .then((res) => console.log(res));
     this.handleClickHome();
+    this.alertLogin();
   }
 
   ///////////////////send data to DataBase when signup//////////////
@@ -119,14 +152,24 @@ class App extends Component {
     this.handleClickLogin();
   }
   //////////////////////Send Job List To DataBase///////////////////
-  postData() {
-    axios.post("http://localhost:1337/insert", {
-      company_name: this.state.company_name,
-      phone_number: this.state.phone_number,
-      job_name: this.state.job_name,
-      description: this.state.description,
-    });
-    this.handleClickHome();
+  postData(e) {
+    e.preventDefault();
+    axios
+      .post("http://localhost:1337/insert", {
+        company_name: this.state.company_name,
+        phone_number: this.state.phone_number,
+        job_name: this.state.job_name,
+        description: this.state.description,
+      })
+      .then((res) => {
+        let jobData = this.state.jobData;
+        jobData.push(res.data);
+        console.log(jobData);
+        this.setState({
+          jobData,
+        });
+      });
+    // this.handleClickHome();
   }
 
   //////////////////////Rendering components when click/////////////
@@ -164,6 +207,11 @@ class App extends Component {
       putjob: true,
     });
   }
+
+  alertLogin() {
+    alert("WELCOME IN BURKINA CAREER");
+  }
+
   /////////////////////////////////////////////////////////////////////
   render() {
     ///////////////////////////////////////////////////////////////////
@@ -173,7 +221,7 @@ class App extends Component {
     const home = this.state.home;
     const verify = this.state.verify;
     const putjob = this.state.putjob;
-    ///////////////////////////////////////////////////////////////////
+    //////////////////////Rendring Components on click/////////////////////////////
 
     if (verify) {
       return (
@@ -228,7 +276,38 @@ class App extends Component {
             handleSaveJobName={this.handleSaveJobName}
             handleSaveDescription={this.handleSaveDescription}
             postData={this.postData}
+            handleSaveNum={this.handleSaveNum}
+            // updateData={this.updateData}
           />
+
+          {this.state.jobData.map((val, i) => (
+            <div key={i} className="box">
+              <label>company name :</label>
+              <h4>{val.company_name}</h4>
+              <label>job name :</label>
+              <h4>{val.job_name}</h4>
+              <label>phone number :</label>
+              <h4>{val.phone_number}</h4>
+              <label>description :</label>
+              <h4>{val.description}</h4>
+              <br />
+              <br />
+              {/* <input
+                type="text"
+                className="in"
+                placeholder="edit here..."
+                // handleSaveNum={this.handleSaveNum}
+              />
+              <button onClick={this.updateData(val._id)}>UPDATE</button> */}
+              <button
+                onClick={(e) => { e.preventDefault()
+                  this.deleteData(val._id);
+                }}
+              >
+                DELETE
+              </button>
+            </div>
+          ))}
         </div>
       );
     }

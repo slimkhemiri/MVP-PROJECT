@@ -1,13 +1,8 @@
 import React from "react";
 import "../../css/home.css";
 function Home(props) {
-  console.log(props);
   return (
     <div>
-      <input type="date" />
-      <input type="text" placeholder="search here..." />
-      <button>Search</button>
-      <br />
       <button className="home" onClick={props.handleClickField}>
         Architecture
       </button>
